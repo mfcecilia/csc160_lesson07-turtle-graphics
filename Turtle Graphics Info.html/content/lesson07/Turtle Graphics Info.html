@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="lesson.css" />
+</head>
+<body style="font-family: arial, helvetica, sans-serif;font-size: 11px;">
+<h2><span style="font-size: 10pt;">Turtle Graphics Assignment</span></h2>
+<p><span style="font-size: 10pt;">Please do the assignment described in <a href="TurtleGraphics.pdf" target="_blank" rel="noopener noreferrer">Turtle Graphics</a>, as modified by the instructions below.</span></p>
+<p></p>
+<p><span style="font-size: 10pt;"><em><strong>This is a more challenging and longer exercise than the previous exercises.</strong></em></span></p>
+<p><span style="font-size: 10pt;">Take an early look at what this exercise requires, and be prepared to ask questions while there is still time to get answers. <em>Note that this program is an command-line style program, not a GUI program.</em></span></p>
+<p><span style="font-size: 10pt;"><strong>Please submit</strong> at least the following file for the assignment (together with any additional Java source files you find necessary):</span></p>
+<ul>
+<li><span style="font-size: 10pt;"><code>TurtleGraphics.java</code>, implements the <strong>TurtleGraphics</strong> class with just the two methods as described below.</span></li>
+</ul>
+<h3><span style="font-size: 10pt;">The two methods of the TurtleGraphics class</span></h3>
+<p><span style="font-size: 10pt;">A &ldquo;turtle program&rdquo; is a sequence of commands that directs the movements and actions of a &ldquo;mechanical turtle&rdquo; as described in the the Exercise 7.21. The definition of the commands is given in the Figure 7.29 in the textbook.</span></p>
+<p><span style="font-size: 10pt;">The <em>enterCommands()</em> method acts as the compiler of a turtle program. Each call to this method enters a new program. The signature and return value of the method is:</span></p>
+<blockquote>
+<pre><span style="font-size: 10pt;">        public boolean enterCommands()</span></pre>
+</blockquote>
+<p><span style="font-size: 10pt;">When the <em>enterCommands()</em> method is invoked, the method should prompt the user for the commands and analyze the the values to see that they are only recognizable and valid commands, and the program is terminated properly. Generate error messages for any problem recognized in the program. The <em>enterCommands()</em> method should transform the program into a more convenient representation, <em>i.e.</em>, more convenient than having to re-analyze the commands read from the user, and at the same time store this more convenient representation in an internal structure ready for execution (hint: class TurtleGraphics may define an int[][] to represent the "compiled" commands).&nbsp; If the Turtle Graphics program has been successfully entered, the method will return a true, otherwise a false is returned.</span></p>
+<p><span style="font-size: 10pt;">The program that was entered may be &ldquo;executed,&rdquo; by calling the <em>executeCommands()</em> method.&nbsp; The signature and return value of the method should be:</span></p>
+<blockquote>
+<pre><span style="font-size: 10pt;">        public void executeCommands()</span></pre>
+</blockquote>
+<p><span style="font-size: 10pt;">This method does not need any parameters, as it will execute the program previously processed and stored in an class data field by the <em>enterCommands</em> method. Executing the program actually does the work to move the turtle over the &ldquo;floor,&rdquo; and as it moves, if its pen is down, it makes a mark, otherwise it just continues moving and leaves whatever is already on the floor undisturbed and unchanged. The <em>executeCommands()</em> returns a value of <strong>false</strong> if there is no valid program to execute.</span></p>
+<p><span style="font-size: 10pt;">Assume that the turtle drawing is in a box that has a floor 20 units by 20 units in size (as mentioned in the description in the textbook). You yourself may specify what you want the behavior to be when the turtle gets to the edge of the box (since this is not mentioned in the problem description&mdash;your choice&mdash;but you must write some commentary to say what you have decided the turtle will do when reaching a boundary, so it may be determined whether you have done it correctly).</span></p>
+<p><span style="font-size: 10pt;">When a &ldquo;display&rdquo; (&ldquo;6&rdquo;) instruction is found in the program, the current state of the floor is rendered to the standard output. (&ldquo;*&rdquo; is suggested in the textbook as a character to represent a mark on the floor, but two characters such as &ldquo;* &rdquo; works better.)</span></p>
+<h3><span style="font-size: 10pt;">Format of the Turtle Program</span></h3>
+<p><span style="font-size: 10pt;">Spaces, end-of-line, blank lines have no significance in a turtle program&nbsp; (just like in a Java program) other than to separate the numbers that make up the commands and distances. A single comma immediately after a number is like a single space. A comma may be replaced by a single space, and the program will be unchanged, and will produce exactly the same drawing. The single comma is allowed in a turtle program just for visual effect, intended to make it easier to read the program when a command has a related move value. It does not have to be there, so need not be checked. All of the five following programs (that draw the box shown in the textbook) are equivalent.</span></p>
+<blockquote>
+<pre><span style="font-size: 10pt;">2 5,12 3 5,12 3 5,12 3 5,12 1 6 9
+2   5 12 3 5 12    3 5 12 3 5,12  1  6 9
+2  5  12  3  5  12  3  5  12  3  5  12  1  6  9
+2, 5,12 3, 5,12 3, 5,12 3, 5,12 1, 6, 9,
+2, 5  12 3,  5, 12,  3 5, 12,  3 5     12 1 6     9
+</span></pre>
+</blockquote>
+<h3><span style="font-size: 10pt;">Initial conditions</span></h3>
+<p><span style="font-size: 10pt;">When the turtle starts executing a program, it is at the point 0,0 (top left-hand corner) of the floor. When the turtle moves, it moves in the direction it is currently facing. The initial direction is in the positive <em>x</em> direction, that is, to the east. The pen is initially up, so that is makes no mark.</span></p>
+<h3><span style="font-size: 10pt;">Test Program</span></h3>
+<p><span style="font-size: 10pt;">The supplied test program tests drawing samples additional to just the textbook example.</span></p>
+<p><span style="font-size: 10pt;">For more information about test program supplied, see the topic �About the Assignment.�&nbsp; If you wish, you may write additional test programs and add them to the list of programs. You will note that the test program has some input that is intended to be incorrect, in order to assess that the <strong>TurtleGraphics</strong> class deals with such problems.</span></p>
+</body>
+</html>
