@@ -21,11 +21,11 @@ class TurtleGraphics {
   //direction
   private static int direction = 0;
 
-  //commands
-  public int commands;
+  //commands array
+  public int commands[20];
 
   //floor 20x20 array
-  private static int floor[][] = new int [20][20];
+  private static int floor[20][20];
 
   /**
      * Creates a new Turtle object on the floor.
@@ -84,8 +84,22 @@ class TurtleGraphics {
   }
 
   public void enterCommands(){
+    //ask user for commands
+    System.out.println("Please enter 7 commands. Choose from the following:\n");
+    //display commands options
+    System.out.println("1 -- Pen up\n");
+    System.out.println("2 -- Pen down\n");
+    System.out.println("3 -- Turn right\n");
+    System.out.println("4 -- Turn left\n");
+    System.out.println("5,x -- Move forard x spaces\n");
+    System.out.println("6 -- Display the floor\n");
+    System.out.println("9 -- End of data\n");
     //scanner to take maximum of 7 commands
+    Scanner scan = new Scanner(System.in);
     //store in commands array
+    for (int a = 0; a < 7; a++) {
+      commands[a] = scan.nextInt();
+    }
   }
 
   public void executeCommands(){
@@ -95,20 +109,15 @@ class TurtleGraphics {
 
   /*command 9*/
   public void end(){
-  //end
-  }
-
-  public void myProgram() {
-    Turtle evelyn = new Turtle(0,0);
-    this.add(evelyn);
-    evelyn.moveForward();
+    //end
+    return;
   }
 
   public static void main(String[] args) {
-
-    //scan commands
-    Scanner scan = new Scanner(System.in);
-
+    //get commands
+    enterCommands();
+    //run given commands
+    executeCommands();
+    return;
   }
-
 }
