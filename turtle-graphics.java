@@ -9,14 +9,20 @@ import java.util.*;
 /*turtle-graphics class*/
 class TurtleGraphics {
 
-  //pen status
+  //pen status -- false = pen up
   private static boolean draw = false;
 
-  ///turtle coordinates
-  private static int x, y;
+  ///turtle starting coordinates
+  private static int startx, starty;
 
-  //commands array
-  var commands[];
+  //new turtle coordinates
+  private static int newx, newy;
+
+  //direction
+  private static int direction = 0;
+
+  //commands
+  public int commands;
 
   //floor 20x20 array
   private static int floor[][] = new int [20][20];
@@ -55,19 +61,25 @@ class TurtleGraphics {
   //turnLeft
   }
 
-  /*command 5*/
-  public void moveForward(){
-  //moveForward
+  /*command 5 -- move forward specified number of spaces*/
+  public void moveForward(int spaces){
+    //moveForward
+    //set floor to 1 if pen is down
+    if (draw) {
+      floor[newx][newy] = 1;
+    } else {
+      floor[newx][newy] = 0;
+    }
   }
 
   /*command 6 -- display 20x20 floor array*/
-  public void displayFloor(){
-  //displayFloor
+  public void displayFloor( ){
+
   for(int i = 0; i < 20; i++) {
-        for (int j = 0; j < 20; j++) {
-            System.out.print(floor[i][j] + " ");
-            System.out.println();
-        }
+      for (int j = 0; j < 20; j++) {
+          System.out.print(floor[i][j] + " ");
+          System.out.println();
+      }
     }
   }
 
