@@ -110,6 +110,7 @@ class TurtleGraphics {
   /*command 9*/
   public void end(){
     //end
+    System.out.println("Goodbye.\n");
     return;
   }
 
