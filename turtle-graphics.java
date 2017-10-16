@@ -27,17 +27,6 @@ class TurtleGraphics {
   //floor 20x20 array
   private static int floor[20][20];
 
-  /**
-     * Creates a new Turtle object on the floor.
-     * @param x     The x-coordinate of the turtle.
-     * @param y     The y-coordinate of the turtle.
-     */
-    public Turtle(int xx, int yy)
-    {
-        x = xx;
-        y = yy;
-    }
-
 
   /*command 1 -- pen up*/
   public void penUp(){
@@ -45,18 +34,18 @@ class TurtleGraphics {
   draw = false;
   }
 
-  /*command 2*/
+  /*command 2 -- pen down*/
   public void penDown(){
   //draw
   draw = true;
   }
 
-  /*command 3*/
+  /*command 3 -- turn right*/
   public void turnRight(){
   //turnRight
   }
 
-  /*command 4*/
+  /*command 4 -- turn left*/
   public void turnLeft(){
   //turnLeft
   }
@@ -105,6 +94,22 @@ class TurtleGraphics {
   public void executeCommands(){
     //analyze commands array
     //run commands
+    switch(commands){
+      case 1: penUp();
+        break;
+      case 2: penDown();
+        break;
+      case 3: turnRight();
+        break;
+      case 4: turnLeft();
+        break;
+      case 5: moveForward();
+        break;
+      case 6: displayFloor();
+        break;
+      case 9: end();
+        break;
+    }
   }
 
   /*command 9*/
