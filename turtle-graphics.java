@@ -83,6 +83,16 @@ class TurtleGraphics {
     }
   }
 
+  public void enterCommands(){
+    //scanner to take maximum of 7 commands
+    //store in commands array
+  }
+
+  public void executeCommands(){
+    //analyze commands array
+    //run commands
+  }
+
   /*command 9*/
   public void end(){
   //end
